@@ -57,6 +57,11 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
+app.get('/', (req, res) => {
+  res.send('PingMee backend is running. Use POST /send-verification to send emails.');
+});
+
+
 // Route to send verification email
 app.post("/send-verification", async (req, res) => {
   const { email } = req.body;
