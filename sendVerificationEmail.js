@@ -1,5 +1,6 @@
 const admin = require("firebase-admin");
-const fetch = require("node-fetch");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_KWY1HkFm_9gG72DBKWgQBC3itzGNt44HJ';
 const SENDER_EMAIL = 'pingmee.pingoo@gmail.com';
